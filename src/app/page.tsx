@@ -1,7 +1,10 @@
+import { Textarea } from "@/components/ui/textarea";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello Remarkable Replies
+    <main className="flex flex-col p-24 items-center">
+      <h1 className="text-2xl text-center py-4">Leave a comment</h1>
+      <Textarea />
     </main>
   );
 }
