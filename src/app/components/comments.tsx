@@ -1,13 +1,15 @@
+import { Card } from "@/components/ui/card";
+
 interface CommentsProps {
   comments: string[];
 }
 export function Comments({ comments }: CommentsProps) {
   return (
-    <div className="pt-10">
+    <div className="flex flex-col gap-2 pt-10">
       {comments.map((comment, index) => (
-        <div key={index} className="">
+        <Card key={index} className="">
           {comment}
-        </div>
+        </Card>
       ))}
     </div>
   );
