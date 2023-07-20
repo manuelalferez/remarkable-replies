@@ -1,12 +1,14 @@
+import { GET, SET } from "@/lib/data";
 import Input from "./input";
-import { kv } from "@vercel/kv";
+
+async function sendData(data: string) {
+  "use server";
+  await SET(data);
+}
 
 export default function Home() {
-  async function sendData(data: string) {
-    await kv.set("user_1_session", data);
-    const session = await kv.get("user_1_session");
-    console.log("Data storage: ", session);
-  }
+  const comments = GET();
+  console.log("Comments: ", comments);
   return (
     <main className="flex flex-col p-24 items-center">
       <h1 className="text-3xl text-center py-4">Leave a comment</h1>
