@@ -1,7 +1,6 @@
 import "server-only";
 
 import { kv } from "@vercel/kv";
-import { NextResponse } from "next/server";
 
 export async function pushToList(key: string, ele: string) {
   await kv.lpush(key, ele);

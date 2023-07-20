@@ -11,6 +11,11 @@ interface InputProps {
 export function CommentForm({ sendData }: InputProps) {
   const [inputData, setInputData] = useState("");
 
+  const handleClick = () => {
+    sendData(inputData);
+    setInputData("");
+  };
+
   return (
     <div className="flex flex-col items-center w-full gap-2">
       <Textarea
@@ -18,7 +23,7 @@ export function CommentForm({ sendData }: InputProps) {
         value={inputData}
         placeholder="Enter your amazing ideas"
       />
-      <Button variant="outline" onClick={() => sendData(inputData)}>
+      <Button variant="outline" onClick={() => handleClick()}>
         Send
       </Button>
     </div>

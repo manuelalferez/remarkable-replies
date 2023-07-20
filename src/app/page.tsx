@@ -1,4 +1,5 @@
 import { getList, pushToList } from "@/lib/data";
+import { revalidatePath } from "next/cache";
 import { CommentForm } from "./components/comment-form";
 import { Comments } from "./components/comments";
 
@@ -7,6 +8,7 @@ const LIST_KEY = "comments";
 async function sendData(data: string) {
   "use server";
   await pushToList(LIST_KEY, data);
+  revalidatePath("/");
 }
 
 export default async function Home() {
