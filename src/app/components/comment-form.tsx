@@ -8,7 +8,7 @@ interface InputProps {
   sendData: (data: string) => void;
 }
 
-export default function Input({ sendData }: InputProps) {
+export function CommentForm({ sendData }: InputProps) {
   const [inputData, setInputData] = useState("");
 
   return (

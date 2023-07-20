@@ -1,18 +1,21 @@
-import { GET, SET } from "@/lib/data";
-import Input from "./input";
+import { getList, pushToList } from "@/lib/data";
+import { CommentForm } from "./components/comment-form";
+import { Comments } from "./components/comments";
+
+const LIST_KEY = "comments";
 
 async function sendData(data: string) {
   "use server";
-  await SET(data);
+  await pushToList(LIST_KEY, data);
 }
 
-export default function Home() {
-  const comments = GET();
-  console.log("Comments: ", comments);
+export default async function Home() {
+  const comments = await getList(LIST_KEY);
   return (
     <main className="flex flex-col p-24 items-center">
       <h1 className="text-3xl text-center py-4">Leave a comment</h1>
-      <Input sendData={sendData} />
+      <CommentForm sendData={sendData} />
+      <Comments comments={comments} />
     </main>
   );
 }
