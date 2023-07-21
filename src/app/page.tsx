@@ -24,9 +24,9 @@ export default async function Home() {
         <Alert className="mt-10 w-full max-w-md">
           <AlertTitle>No comments yet</AlertTitle>
           <AlertDescription>
-            Hey, there's an opportunity for you to claim the prestigious title
-            of 'First Adder' to this hilarious party! Step right up and make
-            history with your witty addition!
+            Hey, there&apos;s an opportunity for you to claim the prestigious
+            title of &apos;First Commentator&apos; to this hilarious party! Step
+            right up and make history with your witty addition!
           </AlertDescription>
         </Alert>
       )}
