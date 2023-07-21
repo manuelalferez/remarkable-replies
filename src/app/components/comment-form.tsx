@@ -22,6 +22,7 @@ export function CommentForm({ sendData }: InputProps) {
         onChange={(e) => setInputData(e.target.value)}
         value={inputData}
         placeholder="Enter your amazing ideas"
+        className="min-h-[80px] w-full max-w-xl h-48 resize-none"
       />
       <Button variant="outline" onClick={() => handleClick()}>
         Send
