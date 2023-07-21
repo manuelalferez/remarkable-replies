@@ -5,17 +5,19 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const formatDateNumber = (num: number): string => {
-  return num.toString().padStart(2, "0");
+const formatDateNumber = (date: Date): string => {
+  const formatter = new Intl.DateTimeFormat("es-ES", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  return formatter.format(date);
 };
 
 export function getTimeStamp(): string {
   const date = new Date();
-  const day = formatDateNumber(date.getDay());
-  const month = formatDateNumber(date.getMonth() + 1);
-  const year = date.getFullYear();
-  const hours = formatDateNumber(date.getHours());
-  const minutes = formatDateNumber(date.getMinutes());
-  const seconds = formatDateNumber(date.getSeconds());
-  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  return formatDateNumber(date);
 }
