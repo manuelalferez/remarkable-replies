@@ -1,11 +1,11 @@
 import { Card } from "@/components/ui/card";
 
-export interface Comment {
+export interface CommentData {
   comment: string;
   timeStamp: string;
 }
 interface CommentsProps {
-  comments: Comment[];
+  comments: CommentData[];
 }
 export function Comments({ comments }: CommentsProps) {
   console.log(comments);
