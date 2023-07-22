@@ -48,7 +48,7 @@ export function CommentForm({ addComment, removeLastComment }: InputProps) {
           Send
         </Button>
         <Button variant="destructive" onClick={() => handleRemove()}>
-          Delete
+          Delete last comment
         </Button>
       </div>
     </div>
