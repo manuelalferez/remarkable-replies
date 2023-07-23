@@ -22,7 +22,7 @@ export function CommentForm({ addComment, removeLastComment }: InputProps) {
       });
     } else {
       toast({
-        title: "❌ Write a comment before pressing send",
+        title: "⛔️ Write a comment before pressing send",
       });
     }
     setComment("");
