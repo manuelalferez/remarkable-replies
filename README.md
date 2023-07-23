@@ -1,4 +1,4 @@
-### Application for writing comments. Comments are stored in [Vercel KV](https://vercel.com/docs/storage/vercel-kv) which is a durable Redis database that enables you to store and retrieve JSON data. App made in Next.js using [App Router](https://nextjs.org/docs/app). 
+Application for writing comments. Comments are stored in [Vercel KV](https://vercel.com/docs/storage/vercel-kv) which is a durable Redis database that enables you to store and retrieve JSON data. App made in Next.js using [App Router](https://nextjs.org/docs/app). 
 
 
 ## Getting Started
